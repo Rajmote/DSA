@@ -19,12 +19,13 @@ for (int i = 0; i < numArray.Length; i++)
 
 Console.WriteLine();
 
-SelectionSort.Sort(numArray);
+//SelectionSort.Sort(numArray);
 
-InsertionSort.Sort(numArray); 
+//InsertionSort.Sort(numArray); 
 
-BubbleSort.Sort(numArray); 
+//BubbleSort.Sort(numArray); 
 
+QuickSort.Sort(numArray,0,numArray.Length-1);
 
 
 for (int i = 0; i < numArray.Length; i++)
