@@ -8,29 +8,24 @@ using DSA.SortingAlgorithum;
 //GameMap.RunMap();
 //Transportation.RunTransport();
 
-
-
-var numArray = new int[9] { 25, 26, 21, 2, 8, 9, 78, 1, 0 };
-
-for (int i = 0; i < numArray.Length; i++)
-{
-    Console.Write(numArray[i] + " ");
-}
-
-Console.WriteLine();
-
+//var numArray = new int[9] { 25, 26, 21, 2, 8, 9, 78, 1, 0 };
+//for (int i = 0; i < numArray.Length; i++)
+//{
+//    Console.Write(numArray[i] + " ");
+//}
+//Console.WriteLine();
 //SelectionSort.Sort(numArray);
-
 //InsertionSort.Sort(numArray); 
-
 //BubbleSort.Sort(numArray); 
+//QuickSort.Sort(numArray,0,numArray.Length-1);
+//for (int i = 0; i < numArray.Length; i++)
+//{
+//    Console.Write(numArray[i] + " ");
+//}
 
-QuickSort.Sort(numArray,0,numArray.Length-1);
+//DSA.LinkedListExample.RunLinkedListExample();
 
+DSA.StackExample.RunStackExample();
 
-for (int i = 0; i < numArray.Length; i++)
-{
-    Console.Write(numArray[i] + " ");
-}
 
 Console.ReadLine();

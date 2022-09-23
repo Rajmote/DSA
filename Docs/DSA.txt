@@ -1,0 +1,269 @@
+1) Selection Sort :-
+
+The selection sort algorithm sorts an array by repeatedly finding the minimum element 
+(considering ascending order) from the unsorted part and putting it at the beginning. 
+
+The algorithm maintains two subarrays in a given array.
+
+The subarray which already sorted. 
+The remaining subarray was unsorted.
+
+In every iteration of the selection sort, the minimum element 
+(considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray. 
+
+Follow the below steps to solve the problem using Selection Sort:
+
+-Initialize minimum value(min_idx) to location 0.
+-Traverse the array to find the minimum element in the array.
+-While traversing if any element smaller than min_idx is found then swap both the values.
+-Then, increment min_idx to point to the next element.
+-Repeat until the array is sorted. 
+
+ public static class SelectionSort
+    {
+        public static void Sort(int[] array)    
+        {
+            for(int i=0; i < array.Length; i++)
+            {
+                int min_index = i;
+                for(int j=i+1;j<array.Length; j++) 
+                {
+                    if (array[min_index] > array[j])
+                    {
+                        min_index = j;
+                    }
+                }
+                int minValue = array[min_index]; 
+                array[min_index] = array[i];
+                array[i] = minValue;
+            }
+        }
+    }
+
+Complexity Analysis of Selection Sort:
+
+Time Complexity: The time complexity of Selection Sort is O(N2) as there are two nested loops:
+One loop to select an element of Array one by one = O(N)
+Another loop to compare that element with every other Array element = O(N)
+Therefore overall complexity = O(N) * O(N) = O(N*N) = O(N2)
+
+Auxiliary Space: O(1) as the only extra memory used is for temporary variables while swapping two values in Array. 
+The selection sort never makes more than O(N) swaps and can be useful when memory write is a costly operation. 
+
+
+
+*********************************************************************************************************************************************************************************************
+
+
+
+2) Insertion Sort Algorithm 
+To sort an array of size N in ascending order: 
+
+-Iterate from arr[1] to arr[N] over the array. 
+-Compare the current element (key) to its predecessor. 
+-If the key element is smaller than its predecessor, compare it to the elements before. 
+ Move the greater elements one position up to make space for the swapped element.
+
+ public class InsertionSort
+    {
+        public static void Sort(int[] array)
+        {
+            for (int i = 1; i < array.Length; i++)
+            {
+                int j = i;
+                while (j > 0 && array[j] < array[j - 1])
+                {
+                    int minValue = array[j];
+                    array[j] = array[j - 1];
+                    array[j - 1] = minValue;
+                    j--;
+                }
+            }
+        }
+    }
+Time Complexity: O(N^2) 
+Auxiliary Space: O(1)
+Insertion sort takes maximum time to sort if elements are sorted in reverse order. And it takes minimum time (Order of n) when elements are already sorted. 
+
+
+
+
+*********************************************************************************************************************************************************************************************
+
+
+
+3) Bubble Sort Algorithm :- 
+
+Follow the below steps to solve the problem:
+
+-Run a nested for loop to traverse the input array using two variables i and j, such that 0 ≤ i < n-1 and 0 ≤ j < n-i-1
+-If arr[j] is greater than arr[j+1] then swap these adjacent elements, else move on
+-Print the sorted array
+
+Time Complexity: O(N2)
+Auxiliary Space: O(1) 
+
+Optimized Implementation of Bubble Sort: 
+The above function always runs O(N2) time even if the array is sorted. It can be optimized by stopping the algorithm if the inner loop didn’t cause any swap. 
+
+    public static class BubbleSort
+    {
+        public static void Sort(int[] array) 
+        {
+            for(int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < array.Length-i-1; j++)
+                {
+                    if(array[j] > array[j+1])
+                    {
+                        int minValue = array[j + 1];
+                        array[j+1]=array[j];
+                        array[j] = minValue;
+                    }
+                }
+            }
+        }
+    }
+
+
+*********************************************************************************************************************************************************************************************
+
+
+
+3) Quick Sort Algorithm :-  
+
+Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as a pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways. 
+
+Always pick the first element as a pivot.
+Always pick the last element as a pivot (implemented below)
+Pick a random element as a pivot.
+Pick median as the pivot.
+
+public class QuickSort
+    {
+        // var numArray = new int[9] { 25, 26, 21, 2, 8, 9, 78, 1, 0 };
+        static void swap(int[] arr, int i, int j)
+        {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+
+
+        static int partition(int[] arr, int low, int high)
+        {       
+            int pivot = arr[high];        
+            int i = (low - 1);
+
+            for (int j = low; j <= high - 1; j++)
+            {              
+                if (arr[j] < pivot)
+                {
+                    i++;
+                    swap(arr, i, j);
+                }
+            }
+            swap(arr, i + 1, high);
+            return (i + 1); 
+        }
+
+        public static void Sort(int[] arr, int low, int high)  
+        {
+            if (low < high)
+            {          
+                int pi = partition(arr, low, high);          
+                Sort(arr, low, pi - 1);
+                Sort(arr, pi + 1, high); 
+            }
+        }
+
+    }
+
+
+    *********************************************************************************************************************************************************************************************
+
+5) ArrayList:-
+ArrayList arrayList = new ArrayList();
+arrayList.Add(5);
+arrayList.AddRange(new int[] { 6, -7, 8 });
+arrayList.AddRange(new object[] { "Marcin", "Mary" });
+arrayList.Insert(5, 7.8); // 7.8 is inserted in 5 index
+
+6) LinkedList :- 
+https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.linkedlist-1?redirectedfrom=MSDN&view=net-6.0
+
+7) List<T>
+https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-7.0
+
+8) SortedList :- 
+https://learn.microsoft.com/en-us/dotnet/api/system.collections.sortedlist?view=net-6.0
+
+9) Stack :-
+https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1?view=net-6.0
+
+10) Queue :-
+https://learn.microsoft.com/en-us/dotnet/api/system.collections.queue?view=net-6.0
+https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1?view=net-6.0
+
+11) Priority Queue :- 
+https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.priorityqueue-2?view=net-6.0
+
+12) HashTables :- 
+https://learn.microsoft.com/en-us/dotnet/api/system.collections.hashtable?view=net-6.0
+Example :- Phone book
+
+13) Dictionary :- 
+https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-7.0
+
+example 1) File open with correct application
+
+Dictionary<string, string> openWith =    new Dictionary<string, string>();
+// Add some elements to the dictionary. There are no
+// duplicate keys, but some of the values are duplicates.
+openWith.Add("txt", "notepad.exe");
+openWith.Add("bmp", "paint.exe");
+openWith.Add("dib", "paint.exe");
+openWith.Add("rtf", "wordpad.exe");
+
+example 2) Product Location
+
+14) SortedDictionary :- 
+https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.sorteddictionary-2?view=net-6.0
+
+This dictonary will automatically sort itseld unlike the normal dictonary.
+
+15) Hash sets :- 
+In some algorithms, it is necessary to perform operations on sets with various data.
+However, what is a set? A set is a collection of distinct objects without duplicated elements
+and without a particular order. Therefore, you can only get to know whether a given
+element is in the set or not. The sets are strictly connected with the mathematical models
+and operations, such as union, intersection, subtraction, and symmetric difference.
+
+https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.hashset-1?view=net-7.0
+
+16) Sorted Set :- 
+https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.sortedset-1?view=net-6.0
+
+Example :- 
+List<string> names = new List<string>()
+{
+"Marcin",
+"Mary",
+"James",[ 143 ]
+"Albert",
+"Lily",
+"Emily",
+"marcin",
+"James",
+"Jane"
+};
+SortedSet<string> sorted = new SortedSet<string>(
+names,
+Comparer<string>.Create((a, b) =>
+a.ToLower().CompareTo(b.ToLower())));
+foreach (string name in sorted)
+{
+Console.WriteLine(name);
+}
+
+17) 
