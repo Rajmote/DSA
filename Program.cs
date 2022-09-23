@@ -10,5 +10,8 @@ using DSA.SortingAlgorithum;
 
 //SelectionSort.RunSelectionSort();
 //SimpleSelectionSort.RunSimpleSelectionSort();
-SimpleInsertionSort.RunInsertionSort();
+//SimpleInsertionSort.RunInsertionSort();
+
+BubbleSort.RunBubbleSort();
+
 Console.ReadLine();
