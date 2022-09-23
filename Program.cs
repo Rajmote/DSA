@@ -8,6 +8,7 @@ using DSA.SortingAlgorithum;
 //GameMap.RunMap();
 //Transportation.RunTransport();
 
-SelectionSort.RunSelectionSort();
-
+//SelectionSort.RunSelectionSort();
+//SimpleSelectionSort.RunSimpleSelectionSort();
+SimpleInsertionSort.RunInsertionSort();
 Console.ReadLine();

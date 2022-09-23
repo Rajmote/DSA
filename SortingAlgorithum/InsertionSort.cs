@@ -8,7 +8,7 @@ namespace DSA.SortingAlgorithum
 {
     public class InsertionSort
     {
-        public static void RunInsertionSort() 
+        public static void RunInsertionSort()
         {
             var numArray = new int[9] { 25, 26, 21, 2, 8, 9, 78, 1, 0 };
             Sort<int>(numArray);
@@ -34,6 +34,42 @@ namespace DSA.SortingAlgorithum
                     j--;
                 }
             }
+        }
+    }
+
+    public class SimpleInsertionSort
+    {
+        public static void RunInsertionSort()
+        {
+             int[] array = new int[10] { 56, 26, 3, 5, 4, 9, 8, 2, 7, 7 };
+            //int[] array = new int[9] { 25, 26, 21, 2, 8, 9, 78, 1, 0 };
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            GetSortedArrayByInsertionSort(array);
+
+            Console.WriteLine();
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+        }
+
+        public static int[] GetSortedArrayByInsertionSort(int[] array)
+        {
+            for (int i = 1; i < array.Length; i++)
+            {
+                int j = i;
+                while (j > 0 && array[j] < array[j - 1])
+                {
+                    int minValue = array[j];
+                    array[j] = array[j - 1]; 
+                    array[j-1] = minValue;              
+                    j--;
+                }
+            }
+            return array;
         }
 
 
