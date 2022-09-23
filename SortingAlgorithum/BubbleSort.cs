@@ -6,23 +6,9 @@ using System.Threading.Tasks;
 
 namespace DSA.SortingAlgorithum
 {
-    public class BubbleSort
+    public static class BubbleSort
     {
-        public static void RunBubbleSort()
-        {
-            var numArray = new int[9] { 25, 26, 21, 2, 8, 9, 78, 1, 0 };
-            for (int i = 0; i < 9; i++)
-            {
-                Console.Write(numArray[i] + " ");
-            }
-            GetSortedArrayByBubbleSort(numArray);
-            Console.WriteLine();
-            for (int i = 0; i < 9; i++)
-            {
-                Console.Write(numArray[i]+" ");
-            }
-        }
-        public static void GetSortedArrayByBubbleSort(int[] array)
+        public static void Sort(int[] array) 
         {
             for(int i = 0; i < array.Length; i++)
             {
