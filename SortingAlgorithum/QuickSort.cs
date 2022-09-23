@@ -8,6 +8,7 @@ namespace DSA.SortingAlgorithum
 {
     public class QuickSort
     {
+        // var numArray = new int[9] { 25, 26, 21, 2, 8, 9, 78, 1, 0 };
         static void swap(int[] arr, int i, int j)
         {
             int temp = arr[i];
@@ -15,38 +16,42 @@ namespace DSA.SortingAlgorithum
             arr[j] = temp;
         }
 
-        static int partition(int[] arr, int low, int high)
+        /// <summary>
+        /// Inserting array and low=0 , high = array.Length-1
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="low"></param>
+        /// <param name="high"></param>
+        /// <returns></returns>
+        static int partition(int[] arr, int start, int end)
         {
-            // pivot
-            int pivot = arr[high];
+            // Considering arr[high] as pivote 
+            int pivot = arr[end];
 
-            // Index of smaller element and indicates the right position of pivot found so far
-            int i = (low - 1);
+            // initializing index for pivot for second run low-1
+            int index = start - 1;
 
-            for (int j = low; j <= high - 1; j++)
+            // 1st run 0 to 8 (in our case because lenth of array is 9) and last element we are considering as pivot for first run
+            for (int j = start; j < end; j++)
             {
-                // If current element is smaller than the pivot
                 if (arr[j] < pivot)
                 {
-                    // Increment index of smaller element
-                    i++;
-                    swap(arr, i, j);
+                    index++;
+                    swap(arr, index, j);
                 }
             }
-            swap(arr, i + 1, high);
-            return (i + 1);
+            swap(arr, index + 1, end);
+
+            return index+1;
         }
 
-        public static void Sort(int[] arr, int low, int high)  
+        public static void Sort(int[] arr, int low, int high)
         {
             if (low < high)
             {
-                // pi is partitioning index, arr[p] is now at right place
                 int pi = partition(arr, low, high);
-
-                // Separately sort elements before partition and after partition
                 Sort(arr, low, pi - 1);
-                Sort(arr, pi + 1, high); 
+                Sort(arr, pi + 1, high);
             }
         }
 
