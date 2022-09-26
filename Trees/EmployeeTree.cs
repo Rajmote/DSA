@@ -11,7 +11,14 @@ namespace DSA.Trees
 
         public static void RunEmployeeTree()
         {
-
+            Tree<Employee> emplyeeTree = new Trees.Tree<Employee>();
+            emplyeeTree.Root = new TreeNode<Employee>() { Data = new Employee() { Id = 1, Name = "Raj", Rank = "Architech" } };
+            emplyeeTree.Root.Children = new List<TreeNode<Employee>>()
+            {
+               new TreeNode<Employee>(){ Data=new Employee() { Id = 1, Name = "Raj", Rank = "Architech" },Parent=emplyeeTree.Root },
+               new TreeNode<Employee>(){ Data= new Employee(){ Id = 2, Name = "Shubh", Rank = "Tester" },Parent=emplyeeTree.Root },
+               new TreeNode<Employee>(){ Data= new Employee(){Id = 2, Name = "Ram", Rank = "Dev" },Parent=emplyeeTree.Root }
+            };
         }
     }
 

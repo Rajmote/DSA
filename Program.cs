@@ -27,6 +27,8 @@ using DSA.Trees;
 //DSA.LinkedListExample.RunLinkedListExample();
 //DSA.StackExample.RunStackExample();
 
-BasicTree.RunBasicTree();
+//BasicTree.RunBasicTree();
+
+EmployeeTree.RunEmployeeTree();
 
 Console.ReadLine();
