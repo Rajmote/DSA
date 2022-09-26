@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using DSA.Arrays;
 using DSA.SortingAlgorithum;
+using DSA.Trees;
 
 //SingleDimensionalArrays.MonthArray();
 //MultiDimensionalArrays.MultiDimensionNumberArray();
@@ -24,8 +25,8 @@ using DSA.SortingAlgorithum;
 //}
 
 //DSA.LinkedListExample.RunLinkedListExample();
+//DSA.StackExample.RunStackExample();
 
-DSA.StackExample.RunStackExample();
-
+BasicTree.RunBasicTree();
 
 Console.ReadLine();
