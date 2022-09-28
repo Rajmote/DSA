@@ -29,6 +29,44 @@ using DSA.Trees;
 
 //BasicTree.RunBasicTree();
 
-EmployeeTree.RunEmployeeTree();
+//EmployeeTree.RunEmployeeTree();
+
+//var arr = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+//    0       1     2
+//0 = 1      2     3 
+//1 = 4      5     6
+//2 = 7      8     9
+//(0,0) , (1,0), (2,0)
+//(0,1),  (1,1), (2,1)
+
+//for (int i = 0; i < 3; i++)
+//{
+//    for (int j = 0; j < 3; j++)
+//    {
+//        Console.Write(arr[i, j]);
+//    }
+//    Console.WriteLine();
+//}
+//Console.WriteLine();
+//for (int i = 0; i < 3; i++)
+//{
+//    for (int j = 0; j < 3; j++)
+//    {
+//        Console.Write(arr[j, i]);
+//    }
+//    Console.WriteLine();
+//}
+//for (int i = 0; i < 3; i++)
+//{
+//    for (int j = 0; j < 3; j++)
+//    {
+//        system.out.println(transpose[i][j] + "");
+//    }
+//}
+
+
+
+
+
 
 Console.ReadLine();
