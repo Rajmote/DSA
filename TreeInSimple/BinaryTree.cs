@@ -54,6 +54,27 @@ namespace DSA.TreeInSimple
         {
             return this.Search ( value, this.Root );
         }
+        private Node Search ( int value, Node parent )
+        {
+            if ( parent != null )
+            {
+                if ( value == parent.Data )
+                {
+                    return parent;
+                }
+
+                if ( value < parent.Data )
+                {
+                    return Search ( value, parent.LtNode );
+                }
+                else
+                {
+                    return Search ( value, parent.RtNode );
+                }
+            }
+            return null;
+        }
+
 
         public void Delete ( int value )
         {
@@ -98,6 +119,7 @@ namespace DSA.TreeInSimple
 
         }
 
+
         private int MinValue ( Node node )
         {
             int minv = node.Data;
@@ -112,26 +134,6 @@ namespace DSA.TreeInSimple
             return minv;
         }
 
-        private Node Search ( int value, Node parent )
-        {
-            if ( parent != null )
-            {
-                if ( value == parent.Data )
-                {
-                    return parent;
-                }
-
-                if ( value < parent.Data )
-                {
-                    return Search ( value, parent.LtNode );
-                }
-                else
-                {
-                    return Search ( value, parent.RtNode );
-                }
-            }
-            return null;
-        }
 
         public int GetDepth ( )
         {
@@ -142,6 +144,8 @@ namespace DSA.TreeInSimple
         {
             return parent == null ? 0 : Math.Max ( GetDepth ( parent.LtNode ), GetDepth ( parent.RtNode ) ) + 1;
         }
+
+
 
         public void PreOrder ( Node parent )
         {
