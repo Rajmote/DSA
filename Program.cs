@@ -1,8 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using DSA.Arrays;
+using DSA.PracticeExamples;
 using DSA.SortingAlgorithum;
 using DSA.TreeInSimple;
 using DSA.Trees;
+using System.Numerics;
 
 //SingleDimensionalArrays.MonthArray();
 //MultiDimensionalArrays.MultiDimensionNumberArray();
@@ -89,54 +91,94 @@ using DSA.Trees;
 //    Console.Write ( ar[j] + " " );
 //    }
 
-BinaryTree binTree = new BinaryTree();
+//BinaryTree binTree = new BinaryTree();
 
-binTree.Insert ( 11 );
+//binTree.Insert ( 11 );
 
-binTree.Insert ( 21 );
+//binTree.Insert ( 21 );
 
-binTree.Insert ( 78 );
+//binTree.Insert ( 78 );
 
-binTree.Insert ( 31 );
+//binTree.Insert ( 31 );
 
-binTree.Insert ( 101 );
+//binTree.Insert ( 101 );
 
-binTree.Insert ( 51 );
+//binTree.Insert ( 51 );
 
-binTree.Insert ( 82 );
+//binTree.Insert ( 82 );
 
-Node node = binTree.Search(51);
+//Node node = binTree.Search(51);
 
-int depth = binTree.GetDepth();
+//int depth = binTree.GetDepth();
 
-Console.WriteLine ( "PreOrder Traversal:" );
+//Console.WriteLine ( "PreOrder Traversal:" );
 
-binTree.PreOrder ( binTree.Root );
+//binTree.PreOrder ( binTree.Root );
 
-Console.WriteLine ();
+//Console.WriteLine ();
 
-Console.WriteLine ( "InOrder Traversal:" );
+//Console.WriteLine ( "InOrder Traversal:" );
 
-binTree.InOrder ( binTree.Root );
+//binTree.InOrder ( binTree.Root );
 
-Console.WriteLine ();
+//Console.WriteLine ();
 
-Console.WriteLine ( "PostOrder Traversal:" );
+//Console.WriteLine ( "PostOrder Traversal:" );
 
-binTree.PostOrder ( binTree.Root );
+//binTree.PostOrder ( binTree.Root );
 
-Console.WriteLine ();
+//Console.WriteLine ();
 
-binTree.Delete ( 78 );
+//binTree.Delete ( 78 );
 
-binTree.Delete ( 82 );
+//binTree.Delete ( 82 );
 
-Console.WriteLine ( "After Remove Operation, Preorder Traversal:" );
+//Console.WriteLine ( "After Remove Operation, Preorder Traversal:" );
 
-binTree.PreOrder ( binTree.Root );
+//binTree.PreOrder ( binTree.Root );
 
-Console.WriteLine ();
+//Console.WriteLine ();
+
+//Console.ReadLine ();
+
+
+
+//var srr= new String[]{"1","123654789658742365411236985","0","45","22"};
+
+//for ( int i = 0; i < srr.Length-1; i++ )
+//{
+//    string temp="";
+//    for ( int j = i+1; j < srr.Length; j++ )
+//    {
+//        if ( BigInteger.Parse ( srr[i] ) > BigInteger.Parse ( srr[j] ) )
+//        {
+//            temp = srr[i];
+//            srr[i] = srr[j];
+//            srr[j] = temp;
+//        }
+//    }
+//}
+
+//for ( int i = 0; i < srr.Length; i++ )
+//{
+//    Console.WriteLine ( srr[i] );
+//}
+
+
+Excercise excercise = new Excercise();
+excercise.Run ();
 
 Console.ReadLine ();
 
-Console.ReadLine ();
+
+//public class Node<T>
+//{
+//    public T Data { get; set; }
+//    public Node Parent { get;set; } 
+//    public List<Node<T>> Children { get; set; }
+//}
+
+//public class Tree<T>
+//{
+//    public Node<T> Root { get; set; }
+//}

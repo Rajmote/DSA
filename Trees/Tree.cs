@@ -9,6 +9,8 @@ namespace DSA.Trees
     public class Tree<T>
     {
         public TreeNode<T> Root { get; set; }
+
+
     }
 
     public class TreeNode<T>
